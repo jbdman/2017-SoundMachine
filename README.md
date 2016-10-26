@@ -1,2 +1,2 @@
-# 2017-SoundServer
-A Java Service to play sounds when it is sent network messages
+# 2017-SoundMachine
+A Java Program to play sounds based on signals sent via NetworkTable
