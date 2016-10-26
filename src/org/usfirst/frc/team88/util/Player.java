@@ -1,3 +1,5 @@
+package org.usfirst.frc.team88.util;
+
 import java.io.IOException;
 import java.net.*;
 
