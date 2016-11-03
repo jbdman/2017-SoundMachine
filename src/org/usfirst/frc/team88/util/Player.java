@@ -1,12 +1,12 @@
 package org.usfirst.frc.team88.util;
 
-import java.io.IOException;
 import java.net.*;
-
 import javax.sound.sampled.*;
 import javax.swing.*;
 
 public class Player extends JFrame {
+
+	private static final long serialVersionUID = 1L;
 
 	public Player() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,20 +47,6 @@ public class Player extends JFrame {
 				clip.open(audioIn);
 				clip.setFramePosition(0);
 				clip.start();
-				
-	//			System.out.println("first time");
-	//			for (int i=0; i<500000; i++) {
-	//				System.out.println("test");
-	//			}
-	//			System.out.println("second time");
-	//			audioIn = AudioSystem.getAudioInputStream(url);
-	//			clip.close();
-	//			// Open audio clip and load samples from the audio input stream.
-	//			clip.open(audioIn);
-	//			clip.start();
-	//
-	//			System.out.println("third time");
-				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
