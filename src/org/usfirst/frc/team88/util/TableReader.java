@@ -53,15 +53,17 @@ public class TableReader implements ITableListener{
 			
 			leftCurrent = table.getNumber("Left Current", 0.0);
 			rightCurrent = table.getNumber("Right Current", 0.0);
-			
-			double leftSpeed = table.getNumber("Left Encoder", 50.0);
-			double rightSpeed = table.getNumber("Right Encoder", 50.0);
 
+			boolean shifted = table.getBoolean("Has Shifted", false);
+			if(shifted){
+				playSound(line, 50);
+			}
+			else{
+				playSound(line, 15);
+			}
 //			System.out.println("x: " + x + " y: " + y + " z: " + z + " Right " + rightCurrent + " Left " + leftCurrent);
 //			System.out.println();
-			
-			System.out.println("left " + leftSpeed + " right " + rightSpeed);
-			
+						
 			//right sound
 			playSound(line, rightCurrent);
 			//left sound
