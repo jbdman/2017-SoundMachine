@@ -52,37 +52,11 @@ public class TableReader implements ITableListener {
 	}
 
 	private static void playSound(SourceDataLine line, double current) {
+		double maxCurrent = 30;
 
-		if (current > 30) {
-			play(line, Tone.A5, 50);
-		} else if (current > 27.5) {
-			play(line, Tone.G4$, 50);
-		} else if (current > 25) {
-			play(line, Tone.G4, 50);
-		} else if (current > 22.5) {
-			play(line, Tone.F4$, 50);
-		} else if (current > 20) {
-			play(line, Tone.F4, 50);
-		} else if (current > 17.5) {
-			play(line, Tone.E4, 50);
-		} else if (current > 15) {
-			play(line, Tone.D4$, 50);
-		} else if (current > 12.5) {
-			play(line, Tone.D4, 50);
-		} else if (current > 10) {
-			play(line, Tone.C4$, 50);
-		} else if (current > 7.5) {
-			play(line, Tone.C4, 50);
-		} else if (current > 5) {
-			play(line, Tone.B4, 50);
-		} else if (current > 2.5) {
-			play(line, Tone.A4$, 50);
-		} else if (current > 0) {
-			play(line, Tone.A4, 50);
-		} else {
-			play(line, Tone.REST, 50);
-		}
-	}
+		if (current > 0.0) {
+			play(line,Tone.values()[Math.min((int)(current/maxCurrent * 13),13)],25);
+		}	}
 
 	private static void play(SourceDataLine line, Tone note, int ms) {
 		ms = Math.min(ms, Tone.SECONDS * 1000);
@@ -102,7 +76,6 @@ public class TableReader implements ITableListener {
 				player.playSound("horn");
 			}
 		}
-
 	}
 
 }
