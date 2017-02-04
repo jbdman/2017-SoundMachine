@@ -33,7 +33,7 @@ public class TableReader implements ITableListener {
 		System.out.println("Network Reader started.");
 
 		NetworkTable.setClientMode();
-		NetworkTable.setIPAddress("10.8.83.76");
+		NetworkTable.setIPAddress("roborio-88-frc.local");
 		NetworkTable robotTable = NetworkTable.getTable("robot");
 		robotTable.addTableListener(this);
 
