@@ -7,20 +7,27 @@ import javax.sound.sampled.SourceDataLine;
 public class SampleSound {
 
     public static void main(String[] args) throws LineUnavailableException {
-        final AudioFormat af =
+		Player player = new Player();
+
+    	final AudioFormat af =
             new AudioFormat(Note.SAMPLE_RATE, 8, 1, true, true);
         SourceDataLine line = AudioSystem.getSourceDataLine(af);
         line.open(af, Note.SAMPLE_RATE);
         line.start();
-//        for  (Note n : Note.values()) {
-//            play(line, n, 500);
-//            play(line, Note.REST, 10);
-//        }
-        for(int i = 0; i < 50; i++){
-        	System.out.println(Note.A5.data()[i]);
+        for  (Note n : Note.values()) {
+            play(line, n, 500);
+            play(line, Note.REST, 10);
         }
+//        for(int i = 0; i < 50; i++){
+//        	System.out.println(Note.A5.data()[i]);
+//        }
         line.drain();
         line.close();
+        
+        player.playSound("horn");
+        
+        player.playSound("shovel");
+        
     }
 
     private static void play(SourceDataLine line, Note note, int ms) {
@@ -41,7 +48,7 @@ enum Note {
         int n = this.ordinal();
         if (n > 0) {
             double exp = ((double) n - 1) / 12d;
-            double f = 440d * Math.pow(2d, exp);
+            double f = 55d * Math.pow(2d, exp);
             for (int i = 0; i < sin.length; i++) {
                 double period = (double)SAMPLE_RATE / f;
                 double angle = 2.0 * Math.PI * i / period;
