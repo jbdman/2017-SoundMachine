@@ -35,7 +35,7 @@ public class TableReader implements ITableListener {
 		NetworkTable.setClientMode();
 		NetworkTable.setIPAddress("roborio-88-frc.local");
 		NetworkTable robotTable = NetworkTable.getTable("robot");
-		robotTable.addTableListener(this);
+		robotTable.addTableListener(this, false);
 
 		while (true) {
 			try {
@@ -45,8 +45,8 @@ public class TableReader implements ITableListener {
 				// null, ex);
 			}
 
-			avgCurrent = robotTable.getNumber("driveAvgCurrent", 0.0);
-			playSound(line, avgCurrent);
+			//avgCurrent = robotTable.getNumber("driveAvgCurrent", 0.0);
+			//playSound(line, avgCurrent);
 		}
 	}
 
