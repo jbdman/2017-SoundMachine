@@ -33,7 +33,7 @@ public class TableReader implements ITableListener {
 		System.out.println("Network Reader started.");
 
 		NetworkTable.setClientMode();
-		NetworkTable.setIPAddress("10.88.88.20");
+		NetworkTable.setIPAddress("10.8.83.76");
 		NetworkTable robotTable = NetworkTable.getTable("robot");
 		robotTable.addTableListener(this);
 
@@ -46,7 +46,6 @@ public class TableReader implements ITableListener {
 			}
 
 			avgCurrent = robotTable.getNumber("driveAvgCurrent", 0.0);
-
 			playSound(line, avgCurrent);
 		}
 	}
