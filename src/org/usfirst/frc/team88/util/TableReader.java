@@ -74,8 +74,18 @@ public class TableReader implements ITableListener {
 				// play shifted to high gear sound
 				player.playSound("horn");
 			}
+			break;
+		case "collision":
+			if((boolean) value){
+				player.playSound("Wilhelm");
+			}
+			break;
+		case "sound":
+			player.playSound((String) value);
+			break;
 		}
 	}
+	
 
 }
 

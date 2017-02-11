@@ -35,6 +35,10 @@ public class Player extends JFrame {
         if(fileNickname.startsWith("shovel")){
             url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
         }
+        
+        if(!fileNickname.equals("")){
+        	url = this.getClass().getClassLoader().getResource("sounds/" + fileNickname + ".wav");
+        }
 
         if(url == null){
             url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
