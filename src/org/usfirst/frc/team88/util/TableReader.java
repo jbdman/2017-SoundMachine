@@ -72,7 +72,7 @@ public class TableReader implements ITableListener {
 				player.playSound("shovel");
 			} else {
 				// play shifted to high gear sound
-				player.playSound("horn");
+				player.playSound("GetAmped");
 			}
 			break;
 		case "collision":
