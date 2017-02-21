@@ -28,9 +28,6 @@ public class Player extends JFrame {
         if(fileNickname.startsWith("horn")){
             url = this.getClass().getClassLoader().getResource("sounds/steam-train-horn.wav");
         }
-        if(fileNickname.startsWith("game_over")){
-            url = this.getClass().getClassLoader().getResource("sounds/game_over.wav");
-        }
 
         if(fileNickname.startsWith("shovel")){
             url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
