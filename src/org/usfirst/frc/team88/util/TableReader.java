@@ -54,12 +54,12 @@ public class TableReader implements ITableListener {
 			break;
 		case "boilerLock":
 			if ((boolean) value) {
-				player.playSound("targetLocked");
+				player.playSound("boiler");
 			}
 			break;
 		case "gearLock":
 			if ((boolean) value) {
-				player.playSound("targetAcquired");
+				player.playSound("gear");
 			}
 			break;
 		case "readyForTakeoff":

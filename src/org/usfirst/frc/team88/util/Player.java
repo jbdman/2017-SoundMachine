@@ -26,23 +26,22 @@ public class Player extends JFrame {
         // Open an audio input stream.
 
         if(fileNickname.startsWith("horn")){
+            System.out.println("loading horn");
             url = this.getClass().getClassLoader().getResource("sounds/steam-train-horn.wav");
-        }
-
-        if(fileNickname.startsWith("shovel")){
+        } else if(fileNickname.startsWith("shovel")){
+            System.out.println("loading shovel");
             url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
-        }
-        
-        if(!fileNickname.equals("")){
+        } else if(fileNickname.startsWith("gear")){
+            System.out.println("loading gear");
+        	url = this.getClass().getClassLoader().getResource("sounds/target_lock.aiff");
+        } else if(!fileNickname.equals("")){
+            System.out.println("loading file " + fileNickname);
         	url = this.getClass().getClassLoader().getResource("sounds/" + fileNickname + ".wav");
         }
 
-        if(url == null){
-            url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
-        }
-
-
         if (url != null) {
+
+            System.out.println("playing...");
 
             try {
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
@@ -56,6 +55,10 @@ public class Player extends JFrame {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            System.out.println("done.");
+
+        } else {
+        	System.out.println("null url");
         }
     }
 }
