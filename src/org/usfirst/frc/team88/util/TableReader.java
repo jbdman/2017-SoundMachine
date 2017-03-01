@@ -22,6 +22,9 @@ public class TableReader implements ITableListener {
 		NetworkTable robotTable = NetworkTable.getTable("robot");
 		robotTable.addTableListener(this, false);
 
+		// test
+		// player.playSound("work-complete");
+		
 		while (true) {
 			try {
 				Thread.sleep(100);
@@ -68,7 +71,10 @@ public class TableReader implements ITableListener {
 			}
 			break;
 		case "sound":
-			player.playSound((String) value);
+			if ((String) value != "") {
+				player.playSound((String) value);
+				table.putString("sound", "");
+			}
 			break;
 		}
 	}
