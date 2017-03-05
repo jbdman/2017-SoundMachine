@@ -63,6 +63,8 @@ public class TableReader implements ITableListener {
 		case "gearLock":
 			if ((boolean) value) {
 				player.playSound("gear");
+			} else {
+				player.playSound("targetLost");
 			}
 			break;
 		case "readyForTakeoff":
