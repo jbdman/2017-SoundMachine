@@ -31,7 +31,7 @@ public class Player extends JFrame {
         } else if(fileNickname.startsWith("shovel")){
             System.out.println("loading shovel");
             url = this.getClass().getClassLoader().getResource("sounds/working-with-shovel.wav");
-        } else if(fileNickname.startsWith("gear")){
+        } else if(fileNickname.startsWith("targetAcquired")){
             System.out.println("loading gear");
         	url = this.getClass().getClassLoader().getResource("sounds/target_lock.aiff");
         } else if(!fileNickname.equals("")){

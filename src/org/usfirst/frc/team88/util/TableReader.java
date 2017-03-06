@@ -23,7 +23,7 @@ public class TableReader implements ITableListener {
 		robotTable.addTableListener(this, false);
 
 		// test
-		// player.playSound("all-systems-nominal");
+		// player.playSound("gearCamera");
 		
 		while (true) {
 			try {
@@ -62,20 +62,28 @@ public class TableReader implements ITableListener {
 			break;
 		case "gearLock":
 			if ((boolean) value) {
-				player.playSound("gear");
+				player.playSound("targetAcquired");
 			} else {
 				player.playSound("targetLost");
 			}
 			break;
 		case "readyForTakeoff":
 			if ((boolean) value) {
-				player.playSound("game_over");
+				player.playSound("yes");
 			}
 			break;
 		case "VisionReady":
 			if ((boolean) value) {
 				player.playSound("all-systems-nominal");
 			}
+			break;
+		case "isBoiler":
+			if ((boolean) value) {
+				player.playSound("boilerCamera");
+			} else {
+				player.playSound("gearCamera");
+			}
+			break;
 		case "sound":
 			if ((String) value != "") {
 				player.playSound((String) value);
