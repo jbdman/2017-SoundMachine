@@ -23,7 +23,7 @@ public class TableReader implements ITableListener {
 		robotTable.addTableListener(this, false);
 
 		// test
-		// player.playSound("work-complete");
+		// player.playSound("all-systems-nominal");
 		
 		while (true) {
 			try {
@@ -72,6 +72,10 @@ public class TableReader implements ITableListener {
 				player.playSound("game_over");
 			}
 			break;
+		case "VisionReady":
+			if ((boolean) value) {
+				player.playSound("all-systems-nominal");
+			}
 		case "sound":
 			if ((String) value != "") {
 				player.playSound((String) value);
