@@ -67,9 +67,14 @@ public class TableReader implements ITableListener {
 				player.playSound("targetLost");
 			}
 			break;
+		case "climbing":
+			if ((boolean) value) {
+				player.playSound("goingup");
+			}
+			break;			
 		case "readyForTakeoff":
 			if ((boolean) value) {
-				player.playSound("yes");
+				player.playSound("victory");
 			}
 			break;
 		case "VisionReady":
